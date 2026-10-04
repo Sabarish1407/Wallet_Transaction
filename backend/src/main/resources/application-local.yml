@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+    url: jdbc:sqlite:wallet.db?journal_mode=WAL&busy_timeout=30000
+    hikari:
+      pool-name: SQLiteHikariPool
+      maximum-pool-size: 1
+      connection-timeout: 30000
+      max-lifetime: 1800000
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 20

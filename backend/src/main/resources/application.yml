@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: wallet-system
+  profiles:
+    active: local
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    expiration-ms: 86400000 # 24 hours
+  treasury:
+    wallet-number: "WLT-TREASURY-0000"
+    initial-balance: 10000000.00
+  security:
+    default-admin:
+      email: admin@wallet.local
+      password: Admin@123
+      name: System Administrator
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
