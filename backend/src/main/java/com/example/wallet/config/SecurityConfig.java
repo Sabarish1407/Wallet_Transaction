@@ -42,6 +42,12 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
+                                "/",
+                                "/index.html",
+                                "/css/**",
+                                "/js/**",
+                                "/assets/**",
+                                "/favicon.ico",
                                 "/api/v1/auth/login",
                                 "/api/v1/auth/reset-password",
                                 "/v3/api-docs/**",
